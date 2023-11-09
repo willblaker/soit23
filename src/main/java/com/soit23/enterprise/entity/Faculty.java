@@ -1,13 +1,24 @@
-package com.soit23.enterprise.model;
+package com.soit23.enterprise.entity;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table
 public class Faculty {
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
+    @Column(name = "title")
     private String title;
+    @Column(name = "email")
     private String email;
 
-    public Faculty(){
+    public Faculty() {
 
     }
 
@@ -61,12 +72,6 @@ public class Faculty {
 
     @Override
     public String toString() {
-        return "Faculty{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", title='" + title + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "Faculty{" + "id=" + id + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", title='" + title + '\'' + ", email='" + email + '\'' + '}';
     }
 }
